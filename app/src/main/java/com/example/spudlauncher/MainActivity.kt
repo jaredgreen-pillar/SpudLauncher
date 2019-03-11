@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         gifWebView.setBackgroundColor(Color.TRANSPARENT)
-        gifWebView.loadUrl("https://giphy.com/gifs/bestart-armstrongvineawards-4Fvqh5TKRzXP2")
+
+        val data = "<!DOCTYPE html><html><body><img src=\"https://media.giphy.com/media/4Fvqh5TKRzXP2/giphy.gif\" alt=\"Smileyface\" width=\"100%\" height=\"100%\"></body></html>"
+        gifWebView.loadData(data, "text/html", "utf-8")
 
         chromeButton.setImageDrawable(getActivityIcon(this,"com.android.chrome", "com.google.android.apps.chrome.Main"))
         chromeButton.setOnClickListener {
